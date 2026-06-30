@@ -1,7 +1,9 @@
 # Acknowledgements
 
-First, I want to thank the following open-source projects for being the source of inspiration for this project: https://github.com/code-boxx/quotr 
-I want to thank the authors of the quotr project for their work and for making it available to the public.
+First, I want to thank the following open-source projects for being the source of inspiration for this project: https://github.com/code-boxx/quotr.
+
+I want to thank the authors of the **quotr** project for their work and for making it available to the public.
+
 Without their work, this project would not have been possible.
 
 # QUOTR-NG
