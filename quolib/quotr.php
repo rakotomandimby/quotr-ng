@@ -104,18 +104,23 @@ class Quotr {
   //  $save : output filename
   function outputHTML ($mode=1, $save=null) {
     // (G1) TEMPLATE FILE CHECK
-    $fileCSS = $this->pathH . $this->template . ".css";
     $fileHTML = $this->pathH . $this->template . ".php";
-    if (!file_exists($fileCSS)) { exit("$fileCSS not found."); }
     if (!file_exists($fileHTML)) { exit("$fileHTML not found."); }
 
-    // (G2) GENERATE HTML INTO BUFFER
+    // (G2) GENERATE THEME CSS + CONTENT
+    $themeCss = "";
+    ob_start();
+    require $fileHTML;
+    $content = ob_get_contents();
+    ob_end_clean();
+
+    // (G3) GENERATE HTML INTO BUFFER
     ob_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <style><?php readfile($fileCSS); ?></style>
+    <style><?=$themeCss?></style>
     <?php if ($mode==4) { ?>
     <script src="quolib/html2canvas.min.js"></script>
     <script>window.onload= () => html2canvas(document.getElementById("quotation")).then(canvas => {
@@ -127,27 +132,27 @@ class Quotr {
     });</script>
     <?php } ?>
   </head>
-  <body><div id="quotation"><?php require $fileHTML; ?></div></body>
+  <body><div id="quotation"><?=$content?></div></body>
 </html>
     <?php
     $this->data = ob_get_contents();
     ob_end_clean();
 
-    // (G3) OUTPUT HTML
+    // (G4) OUTPUT HTML
     switch ($mode) {
-      // (G3-1) OUTPUT ON SCREEN (SAVE TO PNG)
+      // (G4-1) OUTPUT ON SCREEN (SAVE TO PNG)
       default: case 1: case 4:
         echo $this->data;
         break;
 
-      // (G3-2) FORCE DOWNLOAD
+      // (G4-2) FORCE DOWNLOAD
       case 2:
         if ($save===null) { $save = "quotation-" . strtotime("now") . ".html"; }
         $this->outputDown($save, strlen($this->data));
         echo $this->data;
         break;
 
-      // (G3-3) SAVE TO FILE ON SERVER
+      // (G4-3) SAVE TO FILE ON SERVER
       case 3:
         if ($save===null) { $save = "quotation-" . strtotime("now") . ".html"; }
         $stream = @fopen($save, "w");

@@ -1,57 +1,38 @@
-<!-- (A) HEADER -->
-<table id="company"><tr>
-	<td id="co-left">
-		<div id="bigi">QUOTATION</div>
-		<div id="co-addr"><?php
-		for ($i=2; $i<count($this->company); $i++) {
-			echo "<div>{$this->company[$i]}</div>";
-		}
-		?></div>
-	</td>
-	<td id="co-right" class="right">
-		<img src="<?=$this->company[0]?>">
-	</td>
-</table>
+<?php
+$theme = [
+	"header" => ["layout" => "quote-company-left-logo-right"],
+	"styles" => [
+		".company-lines" => [
+			"font-size" => ".95em",
+			"color" => "#888"
+		],
+		".quote-title" => [
+			"color" => "#258ec7",
+			"margin-bottom" => "20px"
+		],
+		".items-table th" => [
+			"background" => "#98c5dc",
+			"padding" => "20px 10px"
+		],
+		".items-table td" => [
+			"background" => "#e4eff5",
+			"border-bottom" => "1px solid #c8d2d7"
+		],
+		".item-description" => ["color" => "#6099b6"],
+		".total-row td" => [
+			"background" => "#98c5dc",
+			"border-bottom" => "none"
+		],
+		".notes" => [
+			"padding" => "10px",
+			"background" => "#e4eff5"
+		],
+		".acceptance-table td" => [
+			"background" => "#e4eff5",
+			"border" => "1px solid #fff",
+			"color" => "#a1a1a1"
+		]
+	]
+];
 
-<!-- (B) CUSTOMER & INFO -->
-<table id="quoinfo"><tr>
-	<td>
-		<strong>CUSTOMER</strong><br>
-		<?php foreach ($this->customer as $c) { echo "$c<br>"; } ?>
-	</td>
-	<td>
-		<?php foreach ($this->head as $i) { echo "<strong>{$i[0]}:</strong> {$i[1]}<br>"; } ?>
-	</td>
-</tr></table>
-
-<!-- (C) ITEMS & TOTALS -->
-<table id="items">
-	<tr><th>Item</th><th>Quantity</th><th>Unit Price</th><th>Amount</th></tr>
-	<?php
-	foreach ($this->items as $i) {
-		echo "<tr><td><div>{$i[0]}</div>";
-		if ($i[1]!="") { echo "<small class='idesc'>{$i[1]}</small>"; }
-		echo "</td><td>{$i[2]}</td><td>{$i[3]}</td><td>{$i[4]}</td></tr>";
-	}
-	if (count($this->totals)>0) { foreach ($this->totals as $t) {
-		echo "<tr class='ttl'><td class='right' colspan='3'>{$t[0]}</td><td>{$t[1]}</td></tr>";
-	}}
-	?>
-</table>
-
-<!-- (D) NOTES -->
-<?php if (count($this->notes)>0) { ?>
-<div id="notes">
-<?php foreach ($this->notes as $n) { echo "$n<br>";} ?>
-</div>
-<?php } ?>
-
-<!-- (E) ACCEPTANCE -->
-<?php if ($this->accept) { ?>
-<div id="accept">
-	Customer Acceptance
-	<table><tr>
-		<td>Signature</td><td>Name</td><td>Date</td>
-	</tr></table>
-</div>
-<?php } ?>
+require __DIR__ . DIRECTORY_SEPARATOR . "base.php";

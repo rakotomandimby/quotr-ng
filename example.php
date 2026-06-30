@@ -4,16 +4,16 @@ require "quolib/quotr.php";
 
 // (B) SET QUOTATION DATA
 // (B1) COMPANY INFORMATION
-/* RECOMMENDED TO JUST PERMANENTLY CODE INTO QUOLIB/QUOTR.PHP > (C1)
+/* RECOMMENDED TO JUST PERMANENTLY CODE INTO QUOLIB/QUOTR.PHP > (C1) */
 $quotr->set("company", [
 "http://localhost/code-boxx-logo.png",
-"D:/http/code-boxx-logo.png",
-"Code Boxx",
+"./code-boxx-logo.png",
+"IIIIICode Boxx",
 "Street Address, City, State, Zip",
 "Phone: xxx-xxx-xxx | Fax: xxx-xxx-xxx",
 "https://code-boxx.com",
 "doge@code-boxx.com"
-]); */
+]); 
 
 // (B2) QUOTATION HEADER
 $quotr->set("head", [
@@ -61,10 +61,10 @@ $quotr->set("accept", true);
 
 // (C) OUTPUT
 // (C1) CHOOSE A TEMPLATE
-$quotr->template("apple");
-// $quotr->template("banana");
+/* $quotr->template("apple"); */
+/* $quotr->template("banana"); */
 // $quotr->template("blueberry");
-// $quotr->template("lime");
+$quotr->template("lime");
 // $quotr->template("simple");
 // $quotr->template("strawberry");
 
@@ -73,7 +73,7 @@ $quotr->template("apple");
 // 2 : FORCE DOWNLOAD
 // 3 : SAVE ON SERVER
 // 4 : DISPLAY IN BROWSER & SAVE AS PNG
-$quotr->outputHTML();
+//$quotr->outputHTML();
 // $quotr->outputHTML(1);
 // $quotr->outputHTML(2, "QUOTATION.html");
 // $quotr->outputHTML(3, __DIR__ . DIRECTORY_SEPARATOR . "QUOTATION.html");
@@ -83,16 +83,16 @@ $quotr->outputHTML();
 // 1 : DISPLAY IN BROWSER (DEFAULT)
 // 2 : FORCE DOWNLOAD
 // 3 : SAVE ON SERVER
-// $quotr->outputPDF();
-// $quotr->outputPDF(1);
+//$quotr->outputPDF();
+//$quotr->outputPDF(1);
 // $quotr->outputPDF(2, "QUOTATION.pdf");
 // $quotr->outputPDF(3, __DIR__ . DIRECTORY_SEPARATOR . "QUOTATION.pdf");
 
 // (C4) OUTPUT IN DOCX
 // 1 : FORCE DOWNLOAD (DEFAULT)
 // 2 : SAVE ON SERVER
-// $quotr->outputDOCX();
-// $quotr->outputDOCX(1, "QUOTATION.docx");
+//$quotr->outputDOCX();
+$quotr->outputDOCX(1, "QUOTATION.docx");
 // $quotr->outputDOCX(2, __DIR__ . DIRECTORY_SEPARATOR . "QUOTATION.docx");
 
 // (D) USE RESET() IF YOU WANT TO CREATE ANOTHER ONE AFFTER THIS
