@@ -1,21 +1,19 @@
-## QUOTR
-Quotr is a free and open-source PHP quotation generator that is capable of creating HTML, PDF, DOCX, and PNG quotations. It is a simple and fuss-free package, giving developers a quick boost with their quotation generation needs.
+# Acknowledgements
+
+First, I want to thank the following open-source projects for being the source of inspiration for this project: https://github.com/code-boxx/quotr 
+I want to thank the authors of the quotr project for their work and for making it available to the public.
+Without their work, this project would not have been possible.
+
+# QUOTR-NG
+
+Quotr-Ng is a free and open-source PHP quotation generator that is capable of creating HTML, PDF, DOCX, and PNG quotations.
 
 > **Namespace support is now available.** You can use Quotr in modern Composer-based applications with `use Quotr\Quotr;` and `new Quotr()`.
 
 <br><br>
 
-## :camera: SCREENSHOTS & QUOTATION TEMPLATES
-<p float="left">
-  <img width="250" src="https://code-boxx.com/wp-content/uploads/2021/11/illus-quotr-1.png">
-  <img width="250" src="https://code-boxx.com/wp-content/uploads/2021/11/illus-quotr-2.png">
-  <img width="250" src="https://code-boxx.com/wp-content/uploads/2021/11/illus-quotr-3.png">
-  <img width="250" src="https://code-boxx.com/wp-content/uploads/2021/11/illus-quotr-4.png">
-  <img width="250" src="https://code-boxx.com/wp-content/uploads/2021/11/illus-quotr-5.png">
-  <img width="250" src="https://code-boxx.com/wp-content/uploads/2021/11/illus-quotr-6.png">
-</p><br>
-
 ## :bulb: HOW TO USE
+
 1) Install dependencies with Composer and load the package through Composer autoload.
 2) Import the namespaced class and instantiate it in your application.
 3) Set your company information in code, then generate the quotation you need.
@@ -39,7 +37,7 @@ $quotr->set("company", [
 ]);
 ```
 
-Check out `example.php` for a full working example.
+Or run  ` php -S localhost:8080 ` for a full working example.
 
 Legacy `require "quolib/quotr.php";` usage still works for backward compatibility, but the Composer-autoloaded namespace is now the primary API.
 <br><br>
@@ -53,26 +51,7 @@ Please visit https://code-boxx.com/quotr-php-quotation-generator for more!
 <br><br>
 
 ## :star: SUPPORT
-Like this project? Just give it a star. That will indirectly help grow my blog a little bit. :wink:
-<br><br>
 
-## :newspaper: LICENSE
-Copyright by Code Boxx
+Like this project? First give it a star to https://github.com/code-boxx/quotr .
+Then consider supporting it by donating to the author at https://code-boxx.com/contactus/ . Your support is greatly appreciated!
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
