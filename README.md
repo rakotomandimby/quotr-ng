@@ -1,5 +1,8 @@
 ## QUOTR
 Quotr is a free and open-source PHP quotation generator that is capable of creating HTML, PDF, DOCX, and PNG quotations. It is a simple and fuss-free package, giving developers a quick boost with their quotation generation needs.
+
+> **Namespace support is now available.** You can use Quotr in modern Composer-based applications with `use Quotr\Quotr;` and `new Quotr()`.
+
 <br><br>
 
 ## :camera: SCREENSHOTS & QUOTATION TEMPLATES
@@ -13,8 +16,32 @@ Quotr is a free and open-source PHP quotation generator that is capable of creat
 </p><br>
 
 ## :bulb: HOW TO USE
-1) Edit `quolib/quotr.php`, change (C1) company information to your own.
-2) That's all. Check out `example.php`.
+1) Install dependencies with Composer and load the package through Composer autoload.
+2) Import the namespaced class and instantiate it in your application.
+3) Set your company information in code, then generate the quotation you need.
+
+```php
+<?php
+
+require __DIR__ . "/vendor/autoload.php";
+
+use Quotr\Quotr;
+
+$quotr = new Quotr();
+$quotr->set("company", [
+  "https://example.com/logo.png",
+  __DIR__ . "/logo.png",
+  "Company Name",
+  "Street Address, City, State, Zip",
+  "Phone: xxx-xxx-xxx | Fax: xxx-xxx-xxx",
+  "https://your-site.com",
+  "hello@your-site.com"
+]);
+```
+
+Check out `example.php` for a full working example.
+
+Legacy `require "quolib/quotr.php";` usage still works for backward compatibility, but the Composer-autoloaded namespace is now the primary API.
 <br><br>
 
 ## :link: DOCUMENTATION & CREDITS

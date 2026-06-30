@@ -1,13 +1,17 @@
 <?php
 // (A) LOAD QUOTR
-require "quolib/quotr.php";
+require __DIR__ . "/vendor/autoload.php";
+
+use Quotr\Quotr;
+
+$quotr = new Quotr();
 
 // (B) SET QUOTATION DATA
 // (B1) COMPANY INFORMATION
-/* RECOMMENDED TO JUST PERMANENTLY CODE INTO QUOLIB/QUOTR.PHP > (C1) */
+/* RECOMMENDED TO KEEP THIS IN YOUR OWN APPLICATION CONFIG */
 $quotr->set("company", [
 "http://localhost/code-boxx-logo.png",
-"./code-boxx-logo.png",
+__DIR__ . "/code-boxx-logo.png",
 "IIIIICode Boxx",
 "Street Address, City, State, Zip",
 "Phone: xxx-xxx-xxx | Fax: xxx-xxx-xxx",

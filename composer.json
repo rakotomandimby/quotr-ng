@@ -1,4 +1,10 @@
 {
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Quotr\\": "src/"
+        }
+    },
     "require": {
         "mpdf/mpdf": "^8.3",
         "phpoffice/phpword": "^1.4"
