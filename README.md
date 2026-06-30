@@ -12,9 +12,8 @@ Quotr-Ng is a free and open-source PHP quotation generator that is capable of cr
 
 > **Namespace support is now available.** You can use Quotr in modern Composer-based applications with `use Quotr\Quotr;` and `new Quotr()`.
 
-<br><br>
 
-## HOW TO USE
+## How to use 
 
 1) Install dependencies with Composer and load the package through Composer autoload.
 2) Import the namespaced class and instantiate it in your application.
@@ -44,15 +43,14 @@ Or run  ` php -S localhost:8080 ` and go to http://localhost:8080/example.php fo
 Legacy `require "quolib/quotr.php";` usage still works for backward compatibility, but the Composer-autoloaded namespace is now the primary API.
 <br><br>
 
-## DOCUMENTATION & CREDITS
+## Underlying Libraries 
 
 1) PDF output with MPDF - https://mpdf.github.io/
 2) DOCX output with PHPWORD - https://github.com/PHPOffice/PHPWord/
-3) PNG output with HTML2CANVAS - https://html2canvas.hertzen.com/
-<br><br>
 
-## SUPPORT
+## Support 
 
-Like this project? First give it a star to https://github.com/code-boxx/quotr .
+Like this project? First give it a star to https://github.com/code-boxx/quotr.
+
 Then consider supporting it by donating to the author at https://code-boxx.com/contactus/ . Your support is greatly appreciated!
 
